@@ -36,7 +36,7 @@ function verifFile($file, $column_count = 0) {
   }
 
   $line_num = 0;
-  while ($line = fgetcsv($h)) {
+  while ($line = fgetcsv($h, 0, $separator)) {
     $line_num++;
     if (empty($column_count)) {
       $column_count = count($line);
